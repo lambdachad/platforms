@@ -1,0 +1,52 @@
+{
+    "name": "app",
+    "version": "0.1.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite dev",
+        "build": "vite build",
+        "preview": "vite preview",
+        "prepare": "svelte-kit sync",
+        "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+        "format": "prettier --write .",
+        "cap:sync": "cap sync",
+        "android:open": "cap open android",
+        "android:run": "cap run android",
+        "android:dev": "vite dev --host --port 5173"
+    },
+    "dependencies": {
+        "@capacitor/android": "^7.4.4",
+        "@capacitor/core": "^7.4.4"
+    },
+    "devDependencies": {
+        "@capacitor/cli": "^7.4.4",
+        "@sveltejs/adapter-static": "^4.0.0-next.4",
+        "@sveltejs/kit": "^3.0.0-next.27",
+        "@sveltejs/vite-plugin-svelte": "^7.3.0",
+        "svelte": "^5.57.0",
+        "svelte-check": "^4.7.6",
+        "typescript": "^6.0.3",
+        "vite": "^8.3.0",
+        "prettier": "^3.9.6",
+        "prettier-plugin-svelte": "^4.1.1"
+    },
+    "prettier": {
+        "printWidth": 160,
+        "semi": false,
+        "singleQuote": false,
+        "tabWidth": 4,
+        "useTabs": false,
+        "trailingComma": "all",
+        "plugins": [
+            "prettier-plugin-svelte"
+        ],
+        "overrides": [
+            {
+                "files": "*.svelte",
+                "options": {
+                    "parser": "svelte"
+                }
+            }
+        ]
+    }
+}
