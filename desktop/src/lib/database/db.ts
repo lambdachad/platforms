@@ -1,11 +1,17 @@
 import Database from "@tauri-apps/plugin-sql"
 import { defineRelations } from "drizzle-orm"
 import { drizzle } from "drizzle-orm/sqlite-proxy"
+import { migrate } from "./migrate.js"
 import * as schema from "./schema.js"
+
+let sqlite: Database | undefined
 
 export const db = drizzle(
     async (sql, params, method) => {
-        const sqlite = await Database.load("sqlite:app.db")
+        if (!sqlite) {
+            sqlite = await Database.load("sqlite:app.db")
+            await migrate(sqlite)
+        }
         if (method === "run") {
             await sqlite.execute(sql, params)
             return { rows: [] }

@@ -1,16 +1,20 @@
-import { CapacitorSQLite, SQLiteConnection } from "@capacitor-community/sqlite"
+import { CapacitorSQLite, SQLiteConnection, SQLiteDBConnection } from "@capacitor-community/sqlite"
 import { defineRelations } from "drizzle-orm"
 import { drizzle } from "drizzle-orm/sqlite-proxy"
 import { migrate } from "./migrate.js"
 import * as schema from "./schema.js"
 
-const sqlite = new SQLiteConnection(CapacitorSQLite)
-const conn = await sqlite.createConnection("app.db", false, "no-encryption", 1, false)
-await conn.open()
-await migrate(conn)
+let sqlite: SQLiteConnection | undefined
+let conn: SQLiteDBConnection | undefined
 
 export const db = drizzle(
     async (sql, params, method) => {
+        if (!sqlite || !conn) {
+            sqlite = new SQLiteConnection(CapacitorSQLite)
+            conn = await sqlite.createConnection("app.db", false, "no-encryption", 1, false)
+            await conn.open()
+            await migrate(conn)
+        }
         if (method === "run") {
             await conn.run(sql, params)
             return { rows: [] }
