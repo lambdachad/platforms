@@ -1,7 +1,7 @@
 # Mobile
 
-Native Android app. Same SvelteKit UI stack, built as a static SPA and wrapped by Capacitor 7.
-No server, so the demo feature is local client-side logic for now.
+Native Android app. Same SvelteKit UI stack, built as a static SPA and wrapped by Capacitor 8.
+No server, so the database is local SQLite on the phone via Drizzle.
 
 ```bash
 bun install            # install dependencies

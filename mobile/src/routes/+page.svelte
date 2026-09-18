@@ -3,7 +3,7 @@
     import { db } from "../lib/database/db.js"
     import { guestsTable, type NewGuest } from "../lib/database/schema.js"
 
-    let newGuest = $state<NewGuest>({ name: "", email: "" });
+    let newGuest = $state<NewGuest>({ name: "", email: "" })
     let guests = $state(await db.select().from(guestsTable).orderBy(asc(guestsTable.id)))
 
     async function addGuest(event: Event) {

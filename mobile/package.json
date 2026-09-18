@@ -16,17 +16,16 @@
     },
     "dependencies": {
         "@capacitor-community/sqlite": "^8.1.1",
-        "@capacitor/android": "^8",
-        "@capacitor/core": "^8",
+        "@capacitor/android": "^8.5.2",
+        "@capacitor/core": "^8.5.2",
         "drizzle-orm": "^1.0.0-rc.5"
     },
     "devDependencies": {
-        "@capacitor/cli": "^8",
+        "@capacitor/cli": "^8.5.2",
         "@sveltejs/adapter-static": "^4.0.0-next.4",
         "@sveltejs/kit": "^3.0.0-next.27",
         "@sveltejs/vite-plugin-svelte": "^7.3.0",
-        "drizzle-kit": "^1.0.0-rc.5-ab785fc",
-        "jeep-sqlite": "^2.8.0",
+        "drizzle-kit": "^1.0.0-rc.5",
         "prettier": "^3.9.8",
         "prettier-plugin-svelte": "^4.1.1",
         "svelte": "^5.57.0",

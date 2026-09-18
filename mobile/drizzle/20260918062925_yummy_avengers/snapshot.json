@@ -1,64 +1,60 @@
 {
-  "version": "7",
-  "dialect": "sqlite",
-  "id": "9eedd60e-f3a0-4fb5-8b7a-deefd96b5a56",
-  "prevIds": [
-    "00000000-0000-0000-0000-000000000000"
-  ],
-  "ddl": [
-    {
-      "name": "guests",
-      "entityType": "tables"
-    },
-    {
-      "type": "integer",
-      "notNull": false,
-      "autoincrement": true,
-      "default": null,
-      "generated": null,
-      "name": "id",
-      "entityType": "columns",
-      "table": "guests"
-    },
-    {
-      "type": "text",
-      "notNull": true,
-      "autoincrement": false,
-      "default": null,
-      "generated": null,
-      "name": "name",
-      "entityType": "columns",
-      "table": "guests"
-    },
-    {
-      "type": "text",
-      "notNull": true,
-      "autoincrement": false,
-      "default": null,
-      "generated": null,
-      "name": "email",
-      "entityType": "columns",
-      "table": "guests"
-    },
-    {
-      "type": "integer",
-      "notNull": true,
-      "autoincrement": false,
-      "default": "(unixepoch() * 1000)",
-      "generated": null,
-      "name": "createdAt",
-      "entityType": "columns",
-      "table": "guests"
-    },
-    {
-      "columns": [
-        "id"
-      ],
-      "nameExplicit": false,
-      "name": "guests_pk",
-      "table": "guests",
-      "entityType": "pks"
-    }
-  ],
-  "renames": []
+    "version": "7",
+    "dialect": "sqlite",
+    "id": "9eedd60e-f3a0-4fb5-8b7a-deefd96b5a56",
+    "prevIds": ["00000000-0000-0000-0000-000000000000"],
+    "ddl": [
+        {
+            "name": "guests",
+            "entityType": "tables"
+        },
+        {
+            "type": "integer",
+            "notNull": false,
+            "autoincrement": true,
+            "default": null,
+            "generated": null,
+            "name": "id",
+            "entityType": "columns",
+            "table": "guests"
+        },
+        {
+            "type": "text",
+            "notNull": true,
+            "autoincrement": false,
+            "default": null,
+            "generated": null,
+            "name": "name",
+            "entityType": "columns",
+            "table": "guests"
+        },
+        {
+            "type": "text",
+            "notNull": true,
+            "autoincrement": false,
+            "default": null,
+            "generated": null,
+            "name": "email",
+            "entityType": "columns",
+            "table": "guests"
+        },
+        {
+            "type": "integer",
+            "notNull": true,
+            "autoincrement": false,
+            "default": "(unixepoch() * 1000)",
+            "generated": null,
+            "name": "createdAt",
+            "entityType": "columns",
+            "table": "guests"
+        },
+        {
+            "columns": ["id"],
+            "nameExplicit": false,
+            "name": "guests_pk",
+            "table": "guests",
+            "entityType": "pks"
+        }
+    ],
+    "renames": []
 }
