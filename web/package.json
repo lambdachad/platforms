@@ -3,12 +3,12 @@
     "version": "0.1.0",
     "type": "module",
     "scripts": {
-        "dev": "bun --bun vite dev",
-        "build": "bun --bun vite build",
-        "preview": "bun --bun vite preview",
+        "dev": "vite dev",
+        "build": "vite build",
+        "preview": "vite preview",
         "prepare": "svelte-kit sync",
-        "check": "bun --bun svelte-kit sync && bun --bun svelte-check --tsconfig ./tsconfig.json",
-        "format": "bun --bun prettier --write ."
+        "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+        "format": "prettier --write ."
     },
     "dependencies": {
         "valibot": "^1.5.0"
@@ -18,7 +18,7 @@
         "@sveltejs/kit": "^3.0.0-next.27",
         "@sveltejs/vite-plugin-svelte": "^7.3.0",
         "bun-types": "^1.4.2",
-        "prettier": "^3.9.7",
+        "prettier": "^3.9.8",
         "prettier-plugin-svelte": "^4.1.1",
         "svelte": "^5.57.0",
         "svelte-check": "^4.7.6",

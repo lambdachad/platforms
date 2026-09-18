@@ -22,6 +22,7 @@
         sdkPkgs: with sdkPkgs; [
           cmdline-tools-latest
           build-tools-35-0-0
+          build-tools-34-0-0
           platform-tools
           platforms-android-35
         ]
@@ -31,11 +32,11 @@
       devShells.${system}.default = pkgs.mkShell {
         buildInputs = [
           android-sdk
-          pkgs.jdk17
+          pkgs.jdk21
         ];
 
         shellHook = ''
-          export JAVA_HOME="${pkgs.jdk17}/lib/openjdk"
+          export JAVA_HOME="${pkgs.jdk21}/lib/openjdk"
         '';
       };
     };

@@ -9,17 +9,16 @@
         "prepare": "svelte-kit sync",
         "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
         "format": "prettier --write .",
-        "cap:sync": "cap sync",
-        "android:open": "cap open android",
         "android:run": "cap run android",
-        "android:dev": "vite dev --host --port 5173"
+        "android:dev": "vite dev --host --port 5173",
+        "android:livereload": "cap run android -l --host localhost --port 5173 --forwardPorts 5173:5173"
     },
     "dependencies": {
-        "@capacitor/android": "^7.4.4",
-        "@capacitor/core": "^7.4.4"
+        "@capacitor/android": "^7.6.9",
+        "@capacitor/core": "^7.6.9"
     },
     "devDependencies": {
-        "@capacitor/cli": "^7.4.4",
+        "@capacitor/cli": "^7.6.9",
         "@sveltejs/adapter-static": "^4.0.0-next.4",
         "@sveltejs/kit": "^3.0.0-next.27",
         "@sveltejs/vite-plugin-svelte": "^7.3.0",
@@ -27,7 +26,7 @@
         "svelte-check": "^4.7.6",
         "typescript": "^6.0.3",
         "vite": "^8.3.0",
-        "prettier": "^3.9.6",
+        "prettier": "^3.9.8",
         "prettier-plugin-svelte": "^4.1.1"
     },
     "prettier": {
