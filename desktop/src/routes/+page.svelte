@@ -1,8 +1,19 @@
 <script lang="ts">
+    import { invoke } from "@tauri-apps/api/core"
     import { asc } from "drizzle-orm"
     import { db } from "../lib/database/db.js"
     import { guestsTable, type NewGuest } from "../lib/database/schema.js"
 
+    // OS info
+    let osInfo = $state<{ os: string; arch: string; family: string }>()
+    let osWarning = $state<string>()
+    try {
+        osInfo = await invoke<{ os: string; arch: string; family: string }>("get_os_info")
+    } catch (error) {
+        osWarning = `Native info unavailable: ${error}`
+    }
+
+    // Guests
     let newGuest = $state<NewGuest>({ name: "", email: "" });
     let guests = $state(await db.select().from(guestsTable).orderBy(asc(guestsTable.id)))
 
@@ -38,6 +49,13 @@
             {/each}
         </tbody>
     </table>
-{:else}
-    <p>No guests yet</p>
 {/if}
+
+<section>
+    <h2>Desktop info</h2>
+    {#if osInfo}
+        <p>{osInfo.os}/{osInfo.arch} ({osInfo.family})</p>
+    {:else}
+        <p role="alert">{osWarning}</p>
+    {/if}
+</section>

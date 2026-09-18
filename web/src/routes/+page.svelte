@@ -1,7 +1,9 @@
 <script lang="ts">
     import { addGuest, getGuests } from "./guests.remote.js"
+    import { getServerInfo } from "./info.remote.js"
 
     let guests = $derived(await getGuests())
+    let serverInfo = $derived(await getServerInfo())
 </script>
 
 <h1>Guestbook</h1>
@@ -34,6 +36,10 @@
             {/each}
         </tbody>
     </table>
-{:else}
-    <p>No guests yet</p>
 {/if}
+
+<section>
+    <h2>Server info</h2>
+    <p>{serverInfo.runtime} on {serverInfo.platform}/{serverInfo.arch}</p>
+    <p>Uptime: {serverInfo.uptime}s, time: {serverInfo.time}</p>
+</section>
