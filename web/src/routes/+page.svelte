@@ -10,9 +10,11 @@
     <input {...addGuest.fields.email.as("email")} placeholder="Email" required />
     <button type="submit">Add guest</button>
 
-    {#each addGuest.fields.allIssues() as issue}
-        <p>{issue.message}</p>
-    {/each}
+    {#if addGuest.fields.allIssues()}
+        {#each addGuest.fields.allIssues() as issue}
+            <p>{issue.message}</p>
+        {/each}
+    {/if}
 </form>
 
 <table>
