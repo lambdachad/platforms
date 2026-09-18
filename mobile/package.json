@@ -10,7 +10,7 @@
         "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
         "format": "prettier --write .",
         "db:generate": "drizzle-kit generate",
-        "android:run": "cap run android",
+        "android:run": "vite build && cap run android",
         "android:dev": "vite dev --host --port 5173",
         "android:livereload": "cap run android -l --host localhost --port 5173 --forwardPorts 5173:5173"
     },
