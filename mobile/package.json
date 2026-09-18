@@ -9,25 +9,30 @@
         "prepare": "svelte-kit sync",
         "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
         "format": "prettier --write .",
+        "db:generate": "drizzle-kit generate",
         "android:run": "cap run android",
         "android:dev": "vite dev --host --port 5173",
         "android:livereload": "cap run android -l --host localhost --port 5173 --forwardPorts 5173:5173"
     },
     "dependencies": {
-        "@capacitor/android": "^7.6.9",
-        "@capacitor/core": "^7.6.9"
+        "@capacitor-community/sqlite": "^8.1.1",
+        "@capacitor/android": "^8",
+        "@capacitor/core": "^8",
+        "drizzle-orm": "^1.0.0-rc.5"
     },
     "devDependencies": {
-        "@capacitor/cli": "^7.6.9",
+        "@capacitor/cli": "^8",
         "@sveltejs/adapter-static": "^4.0.0-next.4",
         "@sveltejs/kit": "^3.0.0-next.27",
         "@sveltejs/vite-plugin-svelte": "^7.3.0",
+        "drizzle-kit": "^1.0.0-rc.5-ab785fc",
+        "jeep-sqlite": "^2.8.0",
+        "prettier": "^3.9.8",
+        "prettier-plugin-svelte": "^4.1.1",
         "svelte": "^5.57.0",
         "svelte-check": "^4.7.6",
         "typescript": "^6.0.3",
-        "vite": "^8.3.0",
-        "prettier": "^3.9.8",
-        "prettier-plugin-svelte": "^4.1.1"
+        "vite": "^8.3.0"
     },
     "prettier": {
         "printWidth": 160,
