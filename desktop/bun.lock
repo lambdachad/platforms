@@ -8,7 +8,7 @@
         "@tauri-apps/api": "^2.11.1",
         "@tauri-apps/plugin-opener": "^2.5.5",
         "@tauri-apps/plugin-sql": "^2.4.1",
-        "drizzle-orm": "^1.0.0-rc.5",
+        "drizzle-orm": "^1.0.0-rc.5-ab785fc",
       },
       "devDependencies": {
         "@sveltejs/adapter-static": "^4.0.0-next.4",
