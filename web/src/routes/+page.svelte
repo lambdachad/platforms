@@ -17,23 +17,23 @@
     {/if}
 </form>
 
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Email</th>
-        </tr>
-    </thead>
-    <tbody>
-        {#each guests as guest (guest.id)}
+{#if guests.length}
+    <table>
+        <thead>
             <tr>
-                <td>{guest.name}</td>
-                <td>{guest.email}</td>
+                <th>Name</th>
+                <th>Email</th>
             </tr>
-        {:else}
-            <tr>
-                <td colspan="2">No guests yet</td>
-            </tr>
-        {/each}
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            {#each guests as guest (guest.id)}
+                <tr>
+                    <td>{guest.name}</td>
+                    <td>{guest.email}</td>
+                </tr>
+            {/each}
+        </tbody>
+    </table>
+{:else}
+    <p>No guests yet</p>
+{/if}

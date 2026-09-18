@@ -38,4 +38,6 @@
             {/each}
         </tbody>
     </table>
+{:else}
+    <p>No guests yet</p>
 {/if}
