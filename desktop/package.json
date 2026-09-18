@@ -9,23 +9,28 @@
         "prepare": "svelte-kit sync",
         "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
         "format": "prettier --write .",
+        "db:generate": "drizzle-kit generate",
+        "db:studio": "drizzle-kit studio",
         "tauri": "tauri"
     },
     "dependencies": {
         "@tauri-apps/api": "^2.11.1",
-        "@tauri-apps/plugin-opener": "^2.5.5"
+        "@tauri-apps/plugin-opener": "^2.5.5",
+        "@tauri-apps/plugin-sql": "^2.4.1",
+        "drizzle-orm": "^1.0.0-rc.5"
     },
     "devDependencies": {
         "@sveltejs/adapter-static": "^4.0.0-next.4",
         "@sveltejs/kit": "^3.0.0-next.27",
         "@sveltejs/vite-plugin-svelte": "^7.3.0",
+        "@tauri-apps/cli": "^2.11.4",
+        "drizzle-kit": "^1.0.0-rc.5-ab785fc",
+        "prettier": "^3.9.8",
+        "prettier-plugin-svelte": "^4.1.1",
         "svelte": "^5.57.0",
         "svelte-check": "^4.7.6",
         "typescript": "^6.0.3",
-        "vite": "^8.3.0",
-        "@tauri-apps/cli": "^2.11.4",
-        "prettier": "^3.9.8",
-        "prettier-plugin-svelte": "^4.1.1"
+        "vite": "^8.3.0"
     },
     "prettier": {
         "printWidth": 160,
