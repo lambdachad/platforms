@@ -1,18 +1,37 @@
 <script lang="ts">
-    import { greet } from "./greet.remote.js"
+    import { addGuest, getGuests } from "./guests.remote.js"
 
-    let name = $state("")
-    let greeting = $state("")
-
-    async function greetUser(event: Event) {
-        event.preventDefault()
-        greeting = await greet(name)
-    }
+    let guests = $derived(await getGuests())
 </script>
 
-<h1>App</h1>
-<form onsubmit={greetUser}>
-    <input placeholder="Enter a name..." bind:value={name} />
-    <button type="submit">Greet</button>
+<h1>Guestbook</h1>
+<form {...addGuest}>
+    <input {...addGuest.fields.name.as("text")} placeholder="Name" required />
+    <input {...addGuest.fields.email.as("email")} placeholder="Email" required />
+    <button type="submit">Add guest</button>
+
+    {#each addGuest.fields.allIssues() as issue}
+        <p>{issue.message}</p>
+    {/each}
 </form>
-<p>{greeting}</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        {#each guests as guest (guest.id)}
+            <tr>
+                <td>{guest.name}</td>
+                <td>{guest.email}</td>
+            </tr>
+        {:else}
+            <tr>
+                <td colspan="2">No guests yet</td>
+            </tr>
+        {/each}
+    </tbody>
+</table>
